@@ -1,4 +1,4 @@
-var array1 =[ 2, 1, 9, 76, 4]
+var array1 =[ 9, 1, 0, 76, 4, 3]
 function insertionSort(arr){
 	var currentVal;
 	var temp;
@@ -20,4 +20,41 @@ function insertionSort(arr){
 	return arr
 }
 
-console.log(insertionSort(array1))
+// console.log(insertionSort(array1))
+
+
+function quickSort(array){
+	let pivot = 0;
+	let temp ;
+	// choose a pivot point 
+	// return array;
+	for(let i = 1; i < array.length; i++){
+		console.log(i)
+		// pivot = i;
+		if(array[pivot] > array[i]){
+			console.log("hell")
+			// temp 
+			// first = array[i]
+			// second =  array[i++]
+
+			pivot+=1;
+		}
+		else{
+						console.log("bell")
+
+			if(array[pivot] > array[i+1]){
+				console.log("yes")
+				temp = array[i];
+				array[i] = array1[i+1]
+				array1[i+1] = temp
+			pivot+=1;
+
+			}
+			
+		}
+	}
+	// array
+	return array;
+}
+
+console.log(quickSort(array1))
