@@ -1,6 +1,6 @@
 class Node{
-	constructure(value){
-		this.value = null;
+	constructor(val){
+		this.val = val;
 		this.left = null;
 		this.right = null;
 	}
@@ -11,18 +11,51 @@ class BinarySearchTree{
 		this.root = null
 	}
 
-	insert(value){
-		let node = new Node(val)
-		if(this.root === null){
-			this.root = node;
-			return this
+	insert(val){
+		let newNode = new Node(val);
+		if(!this.root){
+			this.root = newNode;
+			return this.root;
 		}
 		else{
+			let node = this.root
+			while(node !== null){
+				// check if node is less than or greater than root
+				// if less than then move to left
+				if(newNode.val < node.val ){
+					if(node.left == null){
+						node.left = newNode
+						return;
+					}else{
+						node = node.left
+					}
+				}
+				// if greater than then move to right 
+				if(newNode.val > node.val){
+					// if val does not exists then create val
+					if(node.right == null){
+						node.right = newNode
+						return;
+					}else{
+						node = node.right
+					}
+				}
+				console.log(node)
+			}
+			node = newNode
 
 		}
+		return this;
 	}
 }
 
-var = new BinarySearchTree()
+
+
+
+let bin = new BinarySearchTree()
+bin.insert(20)
+bin.insert(2)
+bin.insert(25)
+console.log(bin)
 
 

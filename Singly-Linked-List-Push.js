@@ -121,21 +121,21 @@ class SinglyLinkedList{
 }
 
 var list = new SinglyLinkedList()
-// list.push(33)
-// list.push(44)
-// list.push(21)
+list.push(33)
+list.push(44)
+list.push(21)
 // // console.log(list.head)
 // // list.shift()
-// // console.log(list)
+console.log(list)
 // list.unShift(1009)
 // // console.log(list.head.next)
 // list.getIndex(0)
 
 
-function factorial(num){
-    if(num === 1)
-        return 1;
-    console.log(num * factorial(num-1))
-    return num * factorial(num-1)
-}
-factorial(5)
+// function factorial(num){
+//     if(num === 1)
+//         return 1;
+//     console.log(num * factorial(num-1))
+//     return num * factorial(num-1)
+// }
+// factorial(5)
