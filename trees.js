@@ -47,6 +47,30 @@ class BinarySearchTree{
 		}
 		return this;
 	}
+	// insert(val){
+	// 	if(this.root === null){
+	// 		let node = this.root;
+	// 	}
+
+	// 	if(node === null){
+	// 		node = new Node(val)
+	// 		// finish insertion
+	// 		return;
+	// 	}
+
+	// 	if(node.left < val){
+	// 	    // move to rigth
+	// 		 node = node.right
+	// 		 insert(val)
+	// 	}
+
+	// 	if(val.left > val){
+	// 		node = node.left
+	// 		insert(val)
+	// 		// move to rigth
+	// 	}
+
+	// }
 }
 
 
