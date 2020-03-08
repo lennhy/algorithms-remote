@@ -21,8 +21,8 @@ class BinarySearchTree{
 			let node = this.root
 			while(node !== null){
 				// check if node is less than or greater than root
-				// if less than then move to left
 				if(newNode.val < node.val ){
+					// if less than then move to left
 					if(node.left == null){
 						node.left = newNode
 						return;
@@ -40,13 +40,38 @@ class BinarySearchTree{
 						node = node.right
 					}
 				}
-				console.log(node)
 			}
-			node = newNode
+			// node = newNode
 
 		}
-		return this;
+		// return this.root;
 	}
+
+	find(val){
+		let newNode = new Node(val);
+		if(!this.root){
+			return false;
+		}
+		else{
+			let node = this.root
+			while(node){
+				if(node.val === val){
+					return true
+				}
+				// check if node is less than or greater than root
+				if(val < node.val ){
+					node = node.left
+				}
+				// if greater than then move to right 
+				if(newNode.val > node.val){
+					node = node.right
+				}
+			}
+
+			return false;
+		}
+	}
+	
 	// insert(val){
 	// 	if(this.root === null){
 	// 		let node = this.root;
@@ -71,15 +96,48 @@ class BinarySearchTree{
 	// 	}
 
 	// }
+	breadthFirstSearch(){
+		var node = this.root,
+		data = [],
+		// The queue is what allows you to do breath first
+		queue = [];
+		queue.push(node)
+
+		while(queue.length){
+			// Remove the first node from the queue array
+			node = queue.shift()
+
+			// IMPORTANT! The data value of the tree node goes into the data array
+			data.push(node.val)
+
+			// Check for a sibling node
+			if(node.left) queue.push(node.left)	
+			if(node.right) queue.push(node.right)	
+			// The tree node goes into the queue
+			console.log("queue ----------- below")
+			console.log(queue)
+		}
+		return data;
+	}
+
+	breadthFirstSearchValue(){
+
+	}
 }
-
-
 
 
 let bin = new BinarySearchTree()
 bin.insert(20)
 bin.insert(2)
 bin.insert(25)
-console.log(bin)
+bin.insert(100)
+bin.insert(9)
+bin.insert(16)
+bin.insert(3)
 
+console.log(BinarySearchTree)
+// console.log(bin.find(9000))
 
+console.log(bin.breadthFirstSearch())
+
+// console.log(bin.breadthFirstSearchValue(3))
