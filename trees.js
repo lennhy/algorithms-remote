@@ -120,9 +120,47 @@ class BinarySearchTree{
 		return data;
 	}
 
-	breadthFirstSearchValue(){
+	depthFirstPreOrderSearch(){
+		var data = []
 
+		function traverse(node){
+			data.push(node.val)
+			if(node.left)  traverse(node.left)
+			if(node.right)  traverse(node.right)
+		}
+
+		traverse(this.root)
+		return data;
 	}
+
+
+	depthFirstPostOrderSearch(){
+		var data = []
+
+		function traverse(node){
+			if(node.left)  traverse(node.left)
+			if(node.right)  traverse(node.right)
+			data.push(node.val)
+		}
+
+		traverse(this.root)
+		return data;
+	}
+
+
+	depthFirstInOrderSearch(){
+		var data = []
+
+		function traverse(node){
+			if(node.left)  traverse(node.left)
+			data.push(node.val)
+			if(node.right)  traverse(node.right)
+		}
+
+		traverse(this.root)
+		return data;
+	}
+
 }
 
 
@@ -135,9 +173,12 @@ bin.insert(9)
 bin.insert(16)
 bin.insert(3)
 
-console.log(BinarySearchTree)
+console.log(bin)
 // console.log(bin.find(9000))
 
-console.log(bin.breadthFirstSearch())
+// console.log(bin.breadthFirstSearch())
 
-// console.log(bin.breadthFirstSearchValue(3))
+// console.log(bin.depthFirstPreOrderSearch())
+// console.log(bin.depthFirstPostOrderSearch())
+console.log(bin.depthFirstInOrderSearch())
+
