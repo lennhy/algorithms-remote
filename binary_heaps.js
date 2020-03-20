@@ -40,7 +40,7 @@ class MaxBinaryHeap{
 
 	extractMaximum(){
 		if(this.values.length > 0){
-			const max = this.values[0]
+			var max = this.values[0]
 			const end = this.values.pop()
 			this.values[0] = end;
 		}
