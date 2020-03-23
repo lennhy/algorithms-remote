@@ -48,6 +48,46 @@ function BinarySearchTree() {
       return undefined;
     }
   }
+
+  this.findMax = function(){
+    if(this.root === null){
+          return null;
+    }
+    else{
+      var node = this.root;
+      // check if right node greater if not then return value
+
+      //if it is make node = right nide and loop again
+      while(node !== null){
+        if(node.right !== null && node.right.value > node.value){
+          node = node.right;
+        }
+        else{
+          return node.value;
+        }
+      }
+    }
+  }
+
+  this.findMin = function(){
+    if(this.root === null){
+          return null;
+    }
+    else{
+      var node = this.root;
+      // check if right node is less if not then return value
+      //if it is make node = right node and loop again
+      while(node !== null){
+        if(node.left !== null && node.left.value < node.value){
+          node = node.left;
+        }
+        else{
+          return node.value;
+        }
+      }
+    }
+  }
+
 }
 
 let bin = new BinarySearchTree()
@@ -61,9 +101,19 @@ bin.add(4)
 bin.add(13)
 bin.add(7)
 
+bin.add(140)
+bin.add(400)
+bin.add(130)
+bin.add(70)
 
 
+bin.add(11)
+bin.add(133)
+bin.add(1909)
+bin.add(79)
 
 
 
  console.log(JSON.stringify(bin));
+
+ console.log(bin.findMin())
